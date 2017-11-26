@@ -1,0 +1,53 @@
+diagram:
+  fill: "white"
+  rows: 7
+  columns: 7
+  gridLines: 
+title:
+  author: Dimitrios Portokalidis
+  company: Demo
+  color: black
+  logoFill: white
+  text: Demo
+  subText: Demo
+  type: bar
+  stroke: black
+# Set defaults for icons, groups, connections
+iconDefaults: &iconDefaults
+  color: black
+  fill: white
+  stroke: black
+  iconFamily: aws
+groupDefaults: &groupDefaults
+  fill: "none"
+  color: black
+  stroke: black
+connectionDefaults: &connectionDefaults
+  color: "black"
+  stroke: "black"
+noteDefaults: &noteDefaults
+  color: black
+  fill: white
+  stroke: black
+  xAlign: center
+  yAlign: center
+# Add the icons
+icons:
+  Internet Gateway: {<<: *iconDefaults, icon: net_vpc_internetgateway, x: 3, y: 4 }
+  ELB: {<<: *iconDefaults, icon: cmpt_elasticloadbalancing, x: 2, y: 3 }
+  NAT: {<<: *iconDefaults, icon: net_vpc_vpcnatgateway, x: 4, y: 3 }
+  WebServer1: {<<: *iconDefaults, icon: cmpt_ec2_instance, x: 2, y: 1 }
+  WebServer2: {<<: *iconDefaults, icon: cmpt_ec2_instance, x: 3, y:1 }
+  WebServer3: {<<: *iconDefaults, icon: cmpt_ec2_instance, x: 4, y:1 }
+  
+# Add the gorups
+groups:
+  ASG: { <<: *groupDefaults, name: Auto Scaling Group, members: [WebServer1, WebServer2, WebServer3] }
+  VPC: { <<: *groupDefaults, name: Demo VPC, members: [ASG, ELB, Internet Gateway] }
+
+# Add conneections
+connections:
+  - { <<: *connectionDefaults, endpoints: [Internet Gateway, ELB] }
+  - { <<: *connectionDefaults, endpoints: [ELB, ASG] }
+  - { <<: *connectionDefaults, endpoints: [NAT, Internet Gateway] }
+  - { <<: *connectionDefaults, endpoints: [NAT, ASG] }

@@ -61,7 +61,7 @@ The AWS Infrastructure which is used for this PoC contains the following compone
 * The appropriate Security Groups
 
 The main mechanism used for scaling the service is Amazon Autoscaling Group Service :
-[Amazon Autoscaling Group] (https://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html).
+[Amazon Autoscaling Group](https://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html).
 For the visualization of the Network Topology of the AWS Infrastructure a free tool called drawthe.net was used:
 
 [Drawthe.net](https://github.com/cidrblock/drawthe.net)
