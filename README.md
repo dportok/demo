@@ -1,11 +1,11 @@
-**Fully automated deployment of a Scalable WebService**
+#**Fully automated deployment of a Scalable WebService**
 
 This Proof of Concept was created as part of task, which requires the creation of a website, which can be used for publishing blogs.
 
-**Requirements**
+##**Requirements**
 The whole project was built using AWS as the cloude provided and Terraform v0.10.8 as the provisioning tool.
 
-**How to spin up the Environment**
+##**How to spin up the Environment**
 The structure of the directory which contains the code is shown below :
 
 ```
@@ -46,7 +46,7 @@ After the user has setup his profile on the aws-vault tool, he can then run the 
 
 After the environment is built the user will have on his terminal as an output, the DNS name of the ELB which he can use to visit the website.
 
-**AWS Infrastructure**
+##**AWS Infrastructure**
 
 The AWS Infrastructure which is used for this PoC contains the following components :
 * 1 VPC
@@ -69,7 +69,7 @@ For the visualization of the Network Topology of the AWS Infrastructure a free t
 The file that describes the Network Topology is called : ```network.yaml``` and is under the root directory of the project.
 ![Alt text](./network.png?raw=true "AWS Infrastructure")
 
-**Future Improvements**
+##**Future Improvements**
 As this project is mainly a PoC there a lot of improvements that could be done in order to achieve a more efficient result, although General Best Practices were taken into account while building this project. The following tasks could be improved/added in the future:
 
 1. Setup SSL for the WebServer (Although traffic for HTTPS was taken into consideration
