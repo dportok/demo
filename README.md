@@ -77,4 +77,5 @@ As this project is mainly a PoC there are a lot of improvements that could be do
 2. Setup a new NACL for the Subnets instead of using the default one. This would act as an extra layer of security
 3. Use proper DNS resolution by utilizing Amazon's Route53 Service
 4. Use a CDN Service such as CloudFront in order to make the content available in a much faster manner in all over the world
-5. Define more specific policies (e.g based on CPU usage) for scaling up/down the Instances
+5. In conjunction with CDN we can also use WAF in the CDN distribution which could act as an extra layer of security (e.g handling easily DDOS attacks etc)
+6. Define more specific policies (e.g based on CPU usage) for scaling up/down the Instances
