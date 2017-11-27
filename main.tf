@@ -152,7 +152,6 @@ resource "aws_instance" "bastion-instance" {
   }
 }
 
-############################# Static Content to be Served ######################
 resource "aws_s3_bucket" "testing-bucket-dportok" {
   bucket = "testing-dportok-static"
   acl    = "public-read"
@@ -163,7 +162,8 @@ resource "aws_s3_bucket" "testing-bucket-dportok" {
     ManagedBy   = "${var.managed}-${var.name}"
   }
 }
-
+  
+############################# Static Content to be Served ######################
 resource "aws_s3_bucket_object" "image" {
   acl    = "public-read"
   key    = "linux.png"
