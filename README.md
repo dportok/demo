@@ -2,6 +2,7 @@
 
 This Proof of Concept was created as part of a task, which requires the creation of a website, which can be used for publishing blogs.
 
+
 ## Requirements
 The whole project was built using AWS as the cloud provider and Terraform v0.10.8 as the provisioning tool.
 
